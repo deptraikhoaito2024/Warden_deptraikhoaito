@@ -1,23 +1,23 @@
 # Ensure 'git' already installed
 > apt-get update -y && apt-get install git -y
 # Auto install
-> wget https://github.com/deptraikhoaito2024/Warden_deptraikhoaito/blob/deptraikhoaito/auto_install.sh && chmod +x auto_install.sh.sh && ./auto_install.sh.sh
+> wget https://github.com/deptraikhoaito2024/Warden_deptraikhoaito/blob/deptraikhoaito/auto_install.sh && chmod +x auto_install.sh && ./auto_install.sh
 # create a new wallet
-wardend keys add $WALLET
+> wardend keys add $WALLET
 
 # restore exexuting wallet
-wardend keys add $WALLET --recover
+> wardend keys add $WALLET --recover
 
 # check sync status
-wardend status 2>&1 | jq 
+> wardend status 2>&1 | jq 
 
 # check balance
-wardend query bank balances $WALLET_ADDRESS 
+> wardend query bank balances $WALLET_ADDRESS 
 
 
 # Create validator.json file
 
-echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(wardend comet show-validator | grep -Po '\"key\":\s*\"\K[^"]*')\"},
+> echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(wardend comet show-validator | grep -Po '\"key\":\s*\"\K[^"]*')\"},
     \"amount\": \"1000000uward\",
     \"moniker\": \"your_node_name\",
     \"identity\": \"\",
@@ -31,7 +31,10 @@ echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(warde
 }" > validator.json
 
 # Create a validator using the JSON configuration
-wardend tx staking create-validator validator.json \
+> wardend tx staking create-validator validator.json \
     --from $WALLET \
     --chain-id buenavista-1 \
 	--gas auto --gas-adjustment 1.5 --fees 600uward \
+# Daily auto faucet & delegate
+> wget https://github.com/deptraikhoaito2024/Warden_deptraikhoaito/blob/deptraikhoaito/warden_daily_faucet_delegate_install.sh && chmod +x warden_daily_faucet_delegate_install.sh && ./warden_daily_faucet_delegate_install.sh
+# create crontab and enjoy
