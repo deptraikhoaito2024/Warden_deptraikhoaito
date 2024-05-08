@@ -1,7 +1,7 @@
 # Ensure 'git' already installed
 > apt-get update -y && apt-get install git -y
 # Auto install
-> wget https://github.com/deptraikhoaito2024/Warden_deptraikhoaito/blob/deptraikhoaito/auto_install.sh && chmod +x auto_install.sh && ./auto_install.sh
+> wget https://raw.githubusercontent.com/deptraikhoaito2024/Warden_deptraikhoaito/deptraikhoaito/auto_install.sh && chmod +x auto_install.sh && ./auto_install.sh
 # create a new wallet
 > wardend keys add $WALLET
 
@@ -36,5 +36,5 @@
     --chain-id buenavista-1 \
 	--gas auto --gas-adjustment 1.5 --fees 600uward \
 # Daily auto faucet & delegate
-> wget https://github.com/deptraikhoaito2024/Warden_deptraikhoaito/blob/deptraikhoaito/warden_daily_faucet_delegate_install.sh && chmod +x warden_daily_faucet_delegate_install.sh && ./warden_daily_faucet_delegate_install.sh
+> wget https://github.com/deptraikhoaito2024/Warden_deptraikhoaito/blob/deptraikhoaito/warden_daily_faucet_delegate.sh && chmod +x warden_daily_faucet_delegate_install.sh && ./warden_daily_faucet_delegate_install.sh
 # create crontab and enjoy
