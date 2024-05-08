@@ -36,5 +36,5 @@
     --chain-id buenavista-1 \
 	--gas auto --gas-adjustment 1.5 --fees 600uward \
 # Daily auto faucet & delegate
-> wget https://github.com/deptraikhoaito2024/Warden_deptraikhoaito/blob/deptraikhoaito/warden_daily_faucet_delegate.sh && chmod +x warden_daily_faucet_delegate_install.sh && ./warden_daily_faucet_delegate_install.sh
+> wget https://raw.githubusercontent.com/deptraikhoaito2024/Warden_deptraikhoaito/deptraikhoaito/warden_daily_faucet_delegate.sh && chmod +x warden_daily_faucet_delegate_install.sh && ./warden_daily_faucet_delegate_install.sh
 # create crontab and enjoy
